@@ -75,16 +75,13 @@ var app = {
                                    config_data[0] = 0x3F;
                                    config_data[1] = 0x00;
 
+                                    var config_period = new Uint8Array(1);
+                                    config_period[0] = 0x19;
+                                    
                                    // Write to config
-                                   ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_config, config_data.buffer,
-                                       () => {
-                                           console.log('DATA WRITTEN')
-                                       },
-                                       () => {
-                                           console.log('DATA FAILED WRITTEN')
-                                       }
-                                   )
-
+                                   ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_config, config_data.buffer)
+                                   ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_period, config_period.buffer)
+                                    
                                    ble.startNotification(DEVICE_ID, SERVICE_ID, CHAR_ID_data, async (buffer) => {
                                        /*
                                         * https://processors.wiki.ti.com/index.php/CC2650_SensorTag_User%27s_Guide#Movement_Sensor
@@ -97,13 +94,13 @@ var app = {
 //                                       console.log(`GYRO: Y: ${(data[1] * 1.0) / (65536 / 500)}`)
 //                                       console.log(`GYRO: Z: ${(data[2] * 1.0) / (65536 / 500)}`)
 
-//                                       const GYRO_X = (data[0] * 1.0) / (65536 / 500)
-//                                       const GYRO_Y = (data[1] * 1.0) / (65536 / 500)
-//                                       const GYRO_Z = (data[2] * 1.0) / (65536 / 500)
-//
+                                       const GYRO_X = (data[0] * 1.0) / (65536 / 500)
+                                       const GYRO_Y = (data[1] * 1.0) / (65536 / 500)
+                                       const GYRO_Z = (data[2] * 1.0) / (65536 / 500)
+
 //                                       GYRO_DATA.push([GYRO_X,GYRO_Y,GYRO_Z])
 //
-//                                       metrics('gyro',GYRO_X, GYRO_Y, GYRO_Z)
+                                       metrics('gyro',GYRO_X, GYRO_Y, GYRO_Z)
 
                                        const ACCEL_X = (data[3] * 1.0) / (32768 / 8)
                                        const ACCEL_Y = (data[4] * 1.0) / (32768 / 8)
@@ -111,20 +108,18 @@ var app = {
                                        
                                        ACCEL_DATA.push([ACCEL_X,ACCEL_Y,ACCEL_Z])
                                        
-                                       if(ACCEL_DATA.length >= 20){
+                                       metrics('accel', ACCEL_X,ACCEL_Y,ACCEL_Z)
+                                       
+                                       
+//                                       console.log('GYRO:', GYRO_X, GYRO_Y, GYRO_Z)
+                                       console.log('ACCEL:', ACCEL_X, ACCEL_Y, ACCEL_Z)
+                                       
+                                       if(ACCEL_DATA.length >= 10){
                                             const { data } = await axios.post('http://3c66cae5.ngrok.io/track_data', ACCEL_DATA)
                                         //        if data = 1 e.g - kod pre response do senzora
 //                                                    response do senzora - dokumentacia
                                             ACCEL_DATA = []
                                        }
-                                       
-                                       metrics('accel', ACCEL_X,ACCEL_Y,ACCEL_Z)
-
-//                                       console.log('GYRO:', GYRO_X, GYRO_Y, GYRO_Z)
-                                       console.log('ACCEL:', ACCEL_X, ACCEL_Y, ACCEL_Z)
-
-                                       // TODO: read accel values from 3, 4, 5 (x, y, z) indexes and transform to G
-                                       // TODO: Formula to convert to G: val = (rawData * 1.0) / (32768/2);
                                    }, (failure) => {
                                        console.log("Failed to read characteristic from device.");
                                    });
