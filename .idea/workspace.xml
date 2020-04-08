@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89bb4b90-5325-4da6-a92d-e1ff3b479c8a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="bf752bf3-d3dc-40d1-96a4-dd7f8e3ff4e8" />
+  <component name="ProjectId" id="1a4YdufYMhyF0fRFY3RvVkQZDq3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="IoT" type="Python.FlaskServer">
+      <module name="IoT" />
+      <option name="target" value="$PROJECT_DIR$/panache.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/PYVE/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89bb4b90-5325-4da6-a92d-e1ff3b479c8a" name="Default Changelist" comment="" />
+      <created>1585996423992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585996423992</updated>
+      <workItem from="1585996429846" duration="4057000" />
+      <workItem from="1586120245442" duration="354000" />
+      <workItem from="1586177395651" duration="4403000" />
+      <workItem from="1586190793155" duration="5965000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="677" y="243" key="#IoT" timestamp="1586200782051">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="677" y="243" key="#IoT/0.0.1920.1080@0.0.1920.1080" timestamp="1586200782051" />
+    <state x="410" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586211464270">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1586002604266" />
+    <state x="410" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586211464270" />
+    <state x="535" y="244" key="EnvironmentVariablesDialog" timestamp="1586180213758">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="535" y="244" key="EnvironmentVariablesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586180213758" />
+    <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1586211654878">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586000006297" />
+    <state width="1878" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586211654878" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1586120106553" />
+    <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1586211654876">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586000006294" />
+    <state width="1878" height="304" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586211654876" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1586120106552" />
+    <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1586211654867">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586000006292" />
+    <state width="1878" height="304" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586211654867" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1586120106551" />
+    <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1586211654877">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586000006295" />
+    <state width="1878" height="304" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586211654877" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1586120106552" />
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom" timestamp="1586190759255">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586190759255" />
+    <state width="1878" height="375" key="GridCell.Tab.1.center" timestamp="1586190759255">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586190759255" />
+    <state width="1878" height="375" key="GridCell.Tab.1.left" timestamp="1586190759254">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586190759254" />
+    <state width="1878" height="375" key="GridCell.Tab.1.right" timestamp="1586190759255">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586190759255" />
+    <state x="469" y="179" key="SettingsEditor" timestamp="1586209647675">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586209647675" />
+    <state x="653" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1586190833289">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="653" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586190833289" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IoT$IoT.coverage" NAME="IoT Coverage Results" MODIFIED="1586211275668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
