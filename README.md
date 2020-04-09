@@ -7,6 +7,7 @@ LLP108-IoT-HCI
 ### Main
 #### HW Prerequisites
 > - TI SensorTag CC2650STK
+> - iOS device version 9.0 or higher
 
 #### SW Components
 > - iOS app 
