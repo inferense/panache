@@ -23,6 +23,7 @@ let status = document.getElementById('status')
 status.textContent = message
 }
 
+//front-end to display real-time metrics on the screen
 function metrics(sensor, x, y, z)
 {
     let x_element = document.getElementById(sensor + "_x")
@@ -76,7 +77,7 @@ var app = {
                                    config_data[1] = 0x00;
 
                                     var config_period = new Uint8Array(1);
-                                    config_period[0] = 0x19;
+                                    config_period[0] = 0x0A;
                                     
                                    // Write to config
                                    ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_config, config_data.buffer)
@@ -114,8 +115,8 @@ var app = {
 //                                       console.log('GYRO:', GYRO_X, GYRO_Y, GYRO_Z)
                                        console.log('ACCEL:', ACCEL_X, ACCEL_Y, ACCEL_Z)
                                        
-                                       if(ACCEL_DATA.length >= 10){
-                                            const { data } = await axios.post('http://3c66cae5.ngrok.io/track_data', ACCEL_DATA)
+                                       if(ACCEL_DATA.length >= 100){
+                                            const { data } = await axios.post('http://3e9387c7.ngrok.io/track_data', ACCEL_DATA)
                                         //        if data = 1 e.g - kod pre response do senzora
 //                                                    response do senzora - dokumentacia
                                             ACCEL_DATA = []
