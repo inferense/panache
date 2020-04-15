@@ -51,6 +51,7 @@ var app = {
         const disconnect_button = document.getElementById('DISCONNECT')
 //        let GYRO_DATA = []
         let ACCEL_DATA = []
+        var IN_TIMEOUT = false
         
         start_scanning_button.addEventListener('click', () => {
             if (!scanning) {
@@ -63,6 +64,13 @@ var app = {
                        const CHAR_ID_config = "f000aa82-0451-4000-b000-000000000000"
                        const CHAR_ID_data = "f000aa81-0451-4000-b000-000000000000"
                        const CHAR_ID_period = "f000aa83-0451-4000-b000-000000000000"
+                       
+//                       IO v1
+
+                       const IO_SERVICE_ID = "f000aa64-0451-4000-b000-000000000000"
+                       const IO_CONFIG = "f000aa66-0451-4000-b000-000000000000" // config of the sensor
+                       const IO_DATA = "f000aa65-0451-4000-b000-000000000000" // IO data
+                       
                        ble.startScan([], (device) => {
                         
                            if (device.id == DEVICE_ID) {
@@ -79,9 +87,28 @@ var app = {
                                     var config_period = new Uint8Array(1);
                                     config_period[0] = 0x0A;
                                     
+//                                     IOv1 SERVICE CONFIG
+                                    
+                                    var config_IO = new Uint8Array(1);
+                                    config_IO[0] = 0x01;
+                                                          
+                                    var IO_data_reset = new Uint8Array(1);
+                                    IO_data_reset[0] = 0x00;
+                                    //IOv1 data
+                                    var activ_RED = new Uint8Array(1);
+                                    activ_RED[0] = 0x01;
+                                    
+                                    var activ_GREEN = new Uint8Array(1);
+                                    activ_GREEN[0] = 0x02;
+                                    
                                    // Write to config
                                    ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_config, config_data.buffer)
                                    ble.write(DEVICE_ID, SERVICE_ID, CHAR_ID_period, config_period.buffer)
+                                   
+                                   //IO v1 turn on IO remote mode
+                                   ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, IO_data_reset.buffer)
+                                   ble.write(DEVICE_ID, IO_SERVICE_ID, IO_CONFIG, config_IO.buffer)
+                                   
                                     
                                    ble.startNotification(DEVICE_ID, SERVICE_ID, CHAR_ID_data, async (buffer) => {
                                        /*
@@ -114,14 +141,31 @@ var app = {
                                        
 //                                       console.log('GYRO:', GYRO_X, GYRO_Y, GYRO_Z)
                                        console.log('ACCEL:', ACCEL_X, ACCEL_Y, ACCEL_Z)
-                                       
-                                       if(ACCEL_DATA.length >= 100){
+
+                                       if(ACCEL_DATA.length >= 13){
                                             const { data } = await axios.post('http://3e9387c7.ngrok.io/track_data', ACCEL_DATA)
-                                        //        if data = 1 e.g - kod pre response do senzora
-//                                                    response do senzora - dokumentacia
+                                            // IOv1 activating / deactivating
+                                           
+                                            if(data == "1" && IN_TIMEOUT==false){
+                                                ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, activ_GREEN.buffer)
+                                                IN_TIMEOUT = true
+                                                setTimeout(function(){
+                                                    ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, IO_data_reset.buffer)
+                                                    IN_TIMEOUT=false
+                                                }, 2000);
+                                                }
+                                            if (data == "2" && IN_TIMEOUT==false){
+                                                ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, activ_RED.buffer)
+                                                IN_TIMEOUT = true
+                                                setTimeout(function(){
+                                                ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, IO_data_reset.buffer)
+                                                IN_TIMEOUT=false
+                                                }, 2000);
+                                                }
+    
                                             ACCEL_DATA = []
                                        }
-                                   }, (failure) => {
+                                   },(failure) => {
                                        console.log("Failed to read characteristic from device.");
                                    });
                                }, () => {
@@ -148,7 +192,7 @@ var app = {
         disconnect_button.addEventListener('click', () => {
                    if (connect_status) {
                        connect_status = false
-                       set_status('Disconnected & ready!')
+                       set_status('Disconnected')
                        ble.disconnect(DEVICE_ID)
                    }
                })

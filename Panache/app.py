@@ -1,7 +1,11 @@
 from flask import Flask, request, make_response, g
 from flask_cors import CORS
+from sklearn import svm
+from static import DP
 import numpy as np
 import pandas as pd
+import pickle
+
 import csv
 
 app = Flask(__name__)
@@ -9,23 +13,34 @@ CORS(app)
 
 data = []
 
+with open('./clf.pickle', 'rb') as f:
+    model = pickle.load(f)
+
+
+def clfout(sample):
+    sample = sample.reshape(1, -1)
+    if model.decision_function(sample) <= (-1.5):
+        return "1"
+    elif model.decision_function(sample) >= 1.0:
+        return "2"
+    else:
+        return "0"
+
 
 @app.route('/track_data', methods=['POST', 'GET'])
 def hello_world():
     content = request.get_json()
-    # result = variable klasifikacie, ktory sa musi returnovat, aby ho apka dostala
-    # kod clasifikacie
-    # return result
-    result = '1'
-    data.append(content)
-    print(content)
+    df = pd.DataFrame(np.array(content), columns=['x', 'y', 'z'])
+    # data.append(content)
+
+    test = DP.Process(df)
+    test.frames()
+    test.FFT()
+    features = test.feed()
+    result = clfout(features)
+    print(result)
     return result
 
-
-# @app.route('/get_data', methods=['GET'])
-# def get_data():
-#     return ','.join([str(x) for x in data])
-#
 
 @app.route('/get_data', methods=['GET'])
 def get_data():
