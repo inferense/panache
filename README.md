@@ -1,5 +1,5 @@
 # Panache
-LLP108-IoT-HCI 
+LLP108-IoT CW 
 
 
 ## Panache - Human-Computer Interface project for LLP108(IoT)
