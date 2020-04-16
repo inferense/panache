@@ -143,10 +143,10 @@ var app = {
                                        console.log('ACCEL:', ACCEL_X, ACCEL_Y, ACCEL_Z)
 
                                        if(ACCEL_DATA.length >= 13){
-                                            const { data } = await axios.post('http://3e9387c7.ngrok.io/track_data', ACCEL_DATA)
+                                            const { data } = await axios.post('https://panache1.herokuapp.com/track_data', ACCEL_DATA)
                                             // IOv1 activating / deactivating
                                            
-                                            if(data == "1" && IN_TIMEOUT==false){
+                                            if(data == "2" && IN_TIMEOUT==false){
                                                 ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, activ_GREEN.buffer)
                                                 IN_TIMEOUT = true
                                                 setTimeout(function(){
@@ -154,7 +154,7 @@ var app = {
                                                     IN_TIMEOUT=false
                                                 }, 2000);
                                                 }
-                                            if (data == "2" && IN_TIMEOUT==false){
+                                            if (data == "1" && IN_TIMEOUT==false){
                                                 ble.write(DEVICE_ID, IO_SERVICE_ID, IO_DATA, activ_RED.buffer)
                                                 IN_TIMEOUT = true
                                                 setTimeout(function(){
