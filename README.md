@@ -12,9 +12,10 @@ LLP108-IoT-HCI
 #### SW Components
 > - iOS app 
 >   - BLE interface (sensor config, advertising, reading etc.) > [Cordova BLE](https://github.com/don/cordova-plugin-ble-central#write)
+>   - Node.js & Cordova
 >   - HTTP client > [Axios](https://github.com/axios/axios)
-> - [Flask](https://flask.palletsprojects.com/en/1.1.x/) & Heroku server
+> - Deployed on cloud using [Flask](https://flask.palletsprojects.com/en/1.1.x/) & Heroku
 > - Gesture recognition/classification 
->   - [Resource](https://www.researchgate.net/publication/221601229_Gesture_Recognition_with_a_3-D_Accelerometer)
+>   - [Implementation Resource](https://www.researchgate.net/publication/221601229_Gesture_Recognition_with_a_3-D_Accelerometer)
 
 
