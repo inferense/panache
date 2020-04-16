@@ -1,8 +1,8 @@
 # Panache
-LLP108-IoT CW 
+LLP108(IoT) CW 
 
 
-## Panache - Human-Computer Interface project for LLP108(IoT)
+## Panache - Gesture-based machine Interface
 
 ### Main
 #### HW Prerequisites
