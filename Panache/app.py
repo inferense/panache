@@ -1,12 +1,10 @@
 from flask import Flask, request, make_response, g
 from flask_cors import CORS
-from sklearn import svm
 from static import DP
 import numpy as np
 import pandas as pd
 import pickle
 
-import csv
 
 app = Flask(__name__)
 CORS(app)
