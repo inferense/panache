@@ -6,7 +6,7 @@ LLP108-IoT-HCI
 
 ### Main
 #### HW Prerequisites
-> - TI SensorTag CC2650STK
+> - TI SensorTag CC2650STK - [Official documentation](https://processors.wiki.ti.com/index.php/CC2650_SensorTag_User%27s_Guide#Movement_Sensor)
 > - iOS device version 9.0 or higher
 
 #### SW Components
