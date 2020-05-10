@@ -19,3 +19,6 @@ LLP108(IoT) CW
 >   - [Implementation Resource](https://www.researchgate.net/publication/221601229_Gesture_Recognition_with_a_3-D_Accelerometer)
 
 
+[Demo](https://youtu.be/6_ibAjIdgCY)
+
+
