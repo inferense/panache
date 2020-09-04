@@ -1,7 +1,5 @@
-# Panache
+# Panache - Gesture-based machine Interface
 LLP108(IoT) CW 
-
-## Panache - Gesture-based machine Interface
 
 ![Panache UI](https://github.com/maan198/Panache/blob/master/Panache/panache_ui.png)
 
